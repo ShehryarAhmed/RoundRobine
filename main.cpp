@@ -25,17 +25,19 @@ int sum=0;
        sum = 0;
    for(int i = 0; i < val; i++){
 
-            if(first[i].burstTime > quant && first[i].burstTime != -1){
+            if(first[i].burstTime > quant && first[i].burstTime != 0){
         cout << "\t\t    "<<first[i].process;
-        cout <<"\t\t     "<<first[i].burstTime-quant;
-        first[i].burstTime -= quant;
+        cout <<"\t\t     "<<first[i].burstTime;
+        if(first[i].burstTime != 0){
+        first[i].burstTime -= quant;}
         cout << "\t\t    "<<first[i].priority<<endl;
         sum += first[i].burstTime;
             }
             else{
         cout << "\t\t    "<<first[i].process;
         cout <<"\t\t     "<<first[i].burstTime;
-        first[i].burstTime -= quant;
+        if(first[i].burstTime != 0){
+        first[i].burstTime -= quant;}
         cout << "\t\t    "<<first[i].priority<<endl;
             }
             }
